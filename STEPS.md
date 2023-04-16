@@ -17,7 +17,7 @@ Step2:
 Master node:
 
    kubeadm init --pod-network-cidr=192.168.0.0/16
-   kubeadm token create --print-join-command
+  
    
    
 Step3: 
