@@ -1,6 +1,6 @@
 # K8
 
-Step1:
+# Step1:
 
 Master and slave 
 
@@ -18,7 +18,7 @@ apt-get update
 
 apt install kubeadm=1.20.0-00 kubectl=1.20.0-00 kubelet=1.20.0-00 -y  
 
-Step2:
+# Step2:
 
 Master node:
 
@@ -30,7 +30,7 @@ Master node:
   
    
    
-Step3: 
+# Step3: 
 
 Master node: 
 
@@ -42,7 +42,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 
    
-step4:
+# step4:
 
 Master node:
 
