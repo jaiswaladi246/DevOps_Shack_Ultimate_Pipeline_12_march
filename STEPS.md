@@ -24,7 +24,7 @@ Master node:
 
    kubeadm init --pod-network-cidr=192.168.0.0/16
    
-  *******If above one fails then run below command
+   *If above one fails then run below command
    
    kubeadm token create --print-join-command
   
