@@ -38,9 +38,9 @@ mkdir -p $HOME/.kube
 
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 
-"$ sign should be put before (id -u) & (id -g)"
+--> Run next step without the double quotes
 
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
+"sudo chown $(id -u):$(id -g) $HOME/.kube/config"
 
 
    
