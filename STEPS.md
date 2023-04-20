@@ -38,6 +38,8 @@ mkdir -p $HOME/.kube
 
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 
+"$ sign should be put before (id -u) & (id -g)"
+
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 
