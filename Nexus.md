@@ -29,16 +29,16 @@ sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin 
 ```
 
-Save this script in a file, for example, `add_docker_repository.sh`, and make it executable using:
+Save this script in a file, for example, `install_docker.sh`, and make it executable using:
 
 ```bash
-chmod +x add_docker_repository.sh
+chmod +x install_docker.sh
 ```
 
 Then, you can run the script using:
 
 ```bash
-./add_docker_repository.sh
+./install_docker.sh
 ```
 
 ## Create Nexus using docker container
