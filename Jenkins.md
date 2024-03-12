@@ -1,49 +1,39 @@
 
-## Installing Jenkins on Debian-based Systems
+## Installing Jenkins on Ubuntu
 
-### 1. Install OpenJDK 17 Runtime Environment
 
 ```bash
+#!/bin/bash
+
+# Install OpenJDK 17 JRE Headless
 sudo apt install openjdk-17-jre-headless -y
-```
 
-### 2. Add Jenkins Repository Key
+# Download Jenkins GPG key
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
 
-```bash
-sudo wget -O /usr/share/keyrings/jenkins-keyring.asc https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
-```
+# Add Jenkins repository to package manager sources
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
 
-### 3. Add Jenkins Repository to APT Sources
-
-```bash
-echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
-```
-
-### 4. Update APT Package Index
-
-```bash
+# Update package manager repositories
 sudo apt-get update
-```
 
-### 5. Install Jenkins
-
-```bash
+# Install Jenkins
 sudo apt-get install jenkins -y
 ```
 
-### 6. Start Jenkins Service
+Save this script in a file, for example, `install_jenkins.sh`, and make it executable using:
 
 ```bash
-sudo systemctl start jenkins
+chmod +x install_jenkins.sh
 ```
 
-### 7. Enable Jenkins Service to Start on Boot
+Then, you can run the script using:
 
 ```bash
-sudo systemctl enable jenkins
+./install_jenkins.sh
 ```
 
-### 8. Access Jenkins Web Interface
-
-Once Jenkins is installed and running, you can access its web interface using a web browser. Navigate to `http://<server-ip-or-domain>:8080` to access the Jenkins dashboard.
-
+This script will automate the installation process of OpenJDK 17 JRE Headless and Jenkins.
